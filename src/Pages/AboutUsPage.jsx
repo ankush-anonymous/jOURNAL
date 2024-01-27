@@ -93,6 +93,7 @@ const AboutUsPage = () => {
                 [theme.breakpoints.down("sm")]: {
                   fontSize: "2.5rem", // Adjust the font size for small screens
                   padding: "15px",
+                  marginTop: "50px",
                 },
               }}
             >
