@@ -7,6 +7,7 @@ import {
   Typography,
   useTheme,
   Avatar,
+  CardMedia,
 } from "@mui/material";
 import React from "react";
 import { AccountCircle } from "@mui/icons-material";
@@ -49,6 +50,7 @@ const AboutUsPage = () => {
             marginBottom: "100px",
             overflow: "hidden", // Ensure the box doesn't overflow its container
             [theme.breakpoints.down("sm")]: {
+              marginTop: "100px",
               marginBottom: "100px",
             },
           }}
@@ -548,7 +550,108 @@ const AboutUsPage = () => {
       </section>
 
       <section>{/* Feedback Section  */}</section>
-      <section>{/* Our Team Section  */}</section>
+
+      {/* Our Team Section  */}
+      <section style={{ backgroundColor: "#A0E9FF", padding: "35px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100px",
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "source sans pro",
+              // color: "#176B87",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "2rem",
+                padding: "15px",
+              },
+            }}
+          >
+            Our Scholar Team
+          </Typography>
+          <br />
+        </Box>
+        <Box>
+          <Grid
+            container
+            spacing={5}
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+              textAlign: "center", // Center-align text inside the Box
+            }}
+          >
+            <Grid
+              item
+              xs={12}
+              md={4}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center", // Center-align text inside the Box
+              }}
+            >
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="100"
+                  image="https://res.cloudinary.com/dtjg2hgky/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1692109846/samples/smile.jpg"
+                  alt="Person"
+                />
+                <CardContent>
+                  <Typography variant="h5">Dr. Alfred Colons</Typography>
+                  <Typography variant="body2">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Delectus at sed molestias dignissimos repudiandae itaque
+                    deleniti doloremque, provident optio molestiae ea
+                    consequuntur enim velit voluptates temporibus veritatis
+                    fugit facilis incidunt?
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={4}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center", // Center-align text inside the Box
+              }}
+            >
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="100"
+                  image="https://res.cloudinary.com/dtjg2hgky/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1692109846/samples/smile.jpg"
+                  alt="Person"
+                />
+                <CardContent>
+                  <Typography variant="h5">Dr. Alfred Colons</Typography>
+                  <Typography variant="body2">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Delectus at sed molestias dignissimos repudiandae itaque
+                    deleniti doloremque, provident optio molestiae ea
+                    consequuntur enim velit voluptates temporibus veritatis
+                    fugit facilis incidunt?
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Box>
+      </section>
+
       <section>{/* Our PublishingPartners Section  */}</section>
     </>
   );
