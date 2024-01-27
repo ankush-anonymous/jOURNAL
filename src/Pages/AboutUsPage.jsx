@@ -12,6 +12,7 @@ import React from "react";
 import { AccountCircle } from "@mui/icons-material";
 import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 
 import NavbarComponent from "../Components/NavbarComponent";
 import NumberScrollAnimation from "../Components/NumberScrollAnimation";
@@ -34,8 +35,24 @@ const AboutUsPage = () => {
       </section>
 
       {/* Countdown Section   */}
-      <section>
-        <Box sx={{ height: "50vh", marginTop: "60px", marginBottom: "100px" }}>
+      <section
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          sx={{
+            marginTop: "60px",
+            marginBottom: "100px",
+            overflow: "hidden", // Ensure the box doesn't overflow its container
+            [theme.breakpoints.down("sm")]: {
+              marginBottom: "100px",
+            },
+          }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -73,7 +90,7 @@ const AboutUsPage = () => {
                 fontFamily: "source sans ",
                 [theme.breakpoints.down("sm")]: {
                   fontSize: "1rem", // Adjust the font size for small screens
-                  marginTop: "35px",
+                  marginTop: "45px",
                   padding: "15px",
                 },
               }}
@@ -82,7 +99,6 @@ const AboutUsPage = () => {
               accomplishments.
             </Typography>
           </Box>
-
           {/* Countdown  */}
           <Box
             sx={{
@@ -90,6 +106,7 @@ const AboutUsPage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexGrow: 1,
             }}
           >
             <Box sx={{ marginTop: "50px", width: "100%" }}>
@@ -164,7 +181,15 @@ const AboutUsPage = () => {
       {/* Our Vision/Mission Section  */}
       <section style={{ backgroundColor: "#FFDD95", padding: "5px" }}>
         <Box
-          style={{ height: "50vh", marginTop: "60px", marginBottom: "160px" }}
+          sx={{
+            marginTop: "60px",
+            marginBottom: "100px",
+            [theme.breakpoints.down("sm")]: {
+              marginTop: "100px",
+              marginBottom: "100px",
+              height: "fit-content",
+            },
+          }}
         >
           <Box
             sx={{
@@ -180,7 +205,7 @@ const AboutUsPage = () => {
               sx={{
                 fontFamily: "source sans pro",
                 [theme.breakpoints.down("sm")]: {
-                  fontSize: "2.5rem", // Adjust the font size for small screens
+                  fontSize: "2.5rem",
                   padding: "15px",
                 },
               }}
@@ -262,7 +287,7 @@ const AboutUsPage = () => {
                   <CardHeader
                     avatar={
                       <Avatar>
-                        <RemoveRedEyeIcon />
+                        <AccessibilityNewIcon />
                       </Avatar>
                     }
                     title={
@@ -333,7 +358,10 @@ const AboutUsPage = () => {
           </Box>
         </Box>
       </section>
-      <section>{/* Why Us Section  */}</section>
+
+      {/* Why Us Section  */}
+      <section></section>
+
       <section>{/* Feedback Section  */}</section>
       <section>{/* Our Team Section  */}</section>
       <section>{/* Our PublishingPartners Section  */}</section>
