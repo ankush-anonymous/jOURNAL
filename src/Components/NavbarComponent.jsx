@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -6,9 +6,13 @@ import IconButton from "@mui/material/IconButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { Box, CssBaseline } from "@mui/material";
+import { Box, CssBaseline, Drawer } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import XIcon from "@mui/icons-material/X";
 
 function NavbarComponent() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const tabs = [
     { label: "AboutUs", link: "/about" },
     { label: "Journals", link: "/about" },
@@ -16,9 +20,26 @@ function NavbarComponent() {
     { label: "Contact", link: "/contact" },
   ];
 
+  const socialMediaLinks = [
+    // { icon: <FacebookIcon />, link: "https://www.facebook.com" },
+    { icon: <XIcon />, link: "https://www.twitter.com" },
+    { icon: <InstagramIcon />, link: "https://www.instagram.com" },
+  ];
+
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setIsDrawerOpen(open);
+  };
+
+  const handleTabsChange = (event, newValue) => {
     setValue(newValue);
   };
 
@@ -29,7 +50,6 @@ function NavbarComponent() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "100vh",
           alignItems: "center",
         }}
       >
@@ -65,18 +85,19 @@ function NavbarComponent() {
           position="static"
           sx={{ backgroundColor: "#45889F", height: 40 }}
         >
+          {/* All Options view in Larger Screen  */}
           <Box
             sx={{
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
               overflow: "hidden",
               marginTop: "3px",
               flexGrow: 1,
+              display: { xs: "none", sm: "none", md: "flex", lg: "flex" },
             }}
           >
             {/* Tabs centered */}
-            <Tabs value={value} onChange={handleChange} textColor="inherit">
+            <Tabs value={value} onChange={handleTabsChange} textColor="inherit">
               {tabs.map((tab, index) => (
                 <Tab
                   key={index}
@@ -87,8 +108,94 @@ function NavbarComponent() {
               ))}
             </Tabs>
           </Box>
+          <Box
+            sx={{
+              alignItems: "center",
+              marginTop: "3px",
+              flexGrow: 1,
+              display: { xs: "block", sm: "block", md: "none", lg: "none" },
+              marginLeft: "5px",
+            }}
+          >
+            <MenuIcon onClick={toggleDrawer(true)} />
+          </Box>
         </AppBar>
       </Box>
+
+      {/* Drawer for xs screens */}
+      <Drawer
+        anchor="left"
+        open={isDrawerOpen}
+        onClose={toggleDrawer(false)}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "auto", // Push the social media links to the bottom
+            backgroundColor: "#176B87",
+            height: "200px",
+          }}
+        >
+          <Typography variant="h5">Logo</Typography>
+        </Box>
+        <Box
+          sx={{
+            width: 200,
+            display: "flex",
+            flexDirection: "column",
+            padding: 2,
+            marginTop: "5px",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%", // Set height to 100% to center vertically
+            margin: "auto", // Add this to center horizontally
+          }}
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <Tabs
+            value={value}
+            onChange={handleTabsChange}
+            textColor="inherit"
+            orientation="vertical"
+          >
+            {tabs.map((tab, index) => (
+              <Tab
+                key={index}
+                label={tab.label.toUpperCase()}
+                component="a"
+                href={tab.link}
+              />
+            ))}
+          </Tabs>
+        </Box>
+
+        {/* Social media links */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "auto", // Push the social media links to the bottom
+            backgroundColor: "#176B87",
+            height: "70px",
+          }}
+        >
+          {socialMediaLinks.map((link, index) => (
+            <IconButton key={index} color="inherit" href={link.link}>
+              {link.icon}
+            </IconButton>
+          ))}
+        </Box>
+      </Drawer>
     </React.Fragment>
   );
 }

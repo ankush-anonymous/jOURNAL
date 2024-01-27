@@ -8,7 +8,7 @@ const AboutUsPage = () => {
     <>
       <NavbarComponent />
       <section>
-        <Box sx={{ height: "40vh" }}></Box>
+        <Box sx={{}}>AboutUsPage</Box>
       </section>
       <section>{/* Count Down Section  */}</section>
       <section>{/* Our Vision/Mission Section  */}</section>
