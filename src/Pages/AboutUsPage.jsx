@@ -360,7 +360,192 @@ const AboutUsPage = () => {
       </section>
 
       {/* Why Us Section  */}
-      <section></section>
+      <section style={{ padding: "5px" }}>
+        <Box
+          sx={{
+            marginTop: "60px",
+            marginBottom: "100px",
+            [theme.breakpoints.down("sm")]: {
+              marginTop: "100px",
+              marginBottom: "100px",
+              height: "fit-content",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100px",
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "",
+                // color: "#176B87",
+                [theme.breakpoints.down("sm")]: {
+                  fontSize: "2.5rem",
+                  padding: "15px",
+                },
+              }}
+            >
+              Why Chose Us ??
+            </Typography>
+            <br />
+          </Box>
+          <Box sx={{ padding: "45px" }}>
+            <Grid container spacing={12}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center", // Center-align text inside the Box
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ color: "#176B87", fontWeight: "bold" }}
+                  >
+                    TIMELY PUBLICATION
+                  </Typography>
+                  <Typography variant="body1">
+                    We provide our authors with a swift and care-free publishing
+                    process.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center", // Center-align text inside the Box
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ color: "#176B87", fontWeight: "bold" }}
+                  >
+                    TIMELY PUBLICATION
+                  </Typography>
+                  <Typography variant="body1">
+                    We provide our authors with a swift and care-free publishing
+                    process.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center", // Center-align text inside the Box
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ color: "#176B87", fontWeight: "bold" }}
+                  >
+                    TIMELY PUBLICATION
+                  </Typography>
+                  <Typography variant="body1">
+                    We provide our authors with a swift and care-free publishing
+                    process.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center", // Center-align text inside the Box
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ color: "#176B87", fontWeight: "bold" }}
+                  >
+                    TIMELY PUBLICATION
+                  </Typography>
+                  <Typography variant="body1">
+                    We provide our authors with a swift and care-free publishing
+                    process.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center", // Center-align text inside the Box
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ color: "#176B87", fontWeight: "bold" }}
+                  >
+                    TIMELY PUBLICATION
+                  </Typography>
+                  <Typography variant="body1">
+                    We provide our authors with a swift and care-free publishing
+                    process.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center", // Center-align text inside the Box
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    sx={{ color: "#176B87", fontWeight: "bold" }}
+                  >
+                    TIMELY PUBLICATION
+                  </Typography>
+                  <Typography variant="body1">
+                    We provide our authors with a swift and care-free publishing
+                    process.
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </section>
 
       <section>{/* Feedback Section  */}</section>
       <section>{/* Our Team Section  */}</section>
