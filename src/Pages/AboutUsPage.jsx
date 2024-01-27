@@ -18,12 +18,34 @@ import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import NavbarComponent from "../Components/NavbarComponent";
 import NumberScrollAnimation from "../Components/NumberScrollAnimation";
 import Divider from "@mui/material/Divider";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const AboutUsPage = () => {
   const [isHovered1, setIsHovered1] = React.useState(false);
   const [isHovered2, setIsHovered2] = React.useState(false);
   const [isHovered3, setIsHovered3] = React.useState(false);
   const theme = useTheme();
+
+  //for partner's carousel
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
+
   return (
     <>
       <NavbarComponent />
@@ -552,7 +574,13 @@ const AboutUsPage = () => {
       <section>{/* Feedback Section  */}</section>
 
       {/* Our Team Section  */}
-      <section style={{ backgroundColor: "#A0E9FF", padding: "35px" }}>
+      <section
+        style={{
+          backgroundColor: "#A0E9FF",
+          padding: "35px",
+          marginBottom: "100px",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -652,7 +680,74 @@ const AboutUsPage = () => {
         </Box>
       </section>
 
-      <section>{/* Our PublishingPartners Section  */}</section>
+      {/* Our PublishingPartners Section  */}
+      <section
+        style={{
+          padding: "35px",
+          marginBottom: "100px",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100px",
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "source sans pro",
+              // color: "#176B87",
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "2rem",
+                padding: "15px",
+              },
+            }}
+          >
+            Our Publishing Partners
+          </Typography>
+          <br />
+        </Box>
+        <Carousel
+          responsive={responsive}
+          infinite
+          draggable={false}
+          swipeable={false}
+          centerMode
+          autoPlay
+          autoPlaySpeed={2000}
+          keyBoardControl
+          customTransition="transform 500ms ease-in-out"
+          arrows={false}
+        >
+          {/* Your carousel items go here */}
+          <div>
+            <img
+              src="https://res.cloudinary.com/dtjg2hgky/image/upload/v1706396771/google_scholar_sfmhmy.png"
+              alt="Image 1"
+              style={{ maxWidth: "200px", height: "auto" }}
+            />
+          </div>
+          <div>
+            <img
+              src="https://res.cloudinary.com/dtjg2hgky/image/upload/v1706397110/ieee_lgkfbf.png"
+              alt="Image 2"
+              style={{ maxWidth: "200px", height: "auto" }}
+            />
+          </div>
+          <div>
+            <img
+              src="https://res.cloudinary.com/dtjg2hgky/image/upload/v1706397008/springer_jguhov.png"
+              alt="Image 3"
+              style={{ maxWidth: "200px", height: "auto" }}
+            />
+          </div>
+          {/* Add more images as needed */}
+        </Carousel>
+      </section>
     </>
   );
 };
