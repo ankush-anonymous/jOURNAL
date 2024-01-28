@@ -4,6 +4,8 @@ import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 
 import AboutUsPage from "./Pages/AboutUsPage";
 import ListOfJournalPage from "./Pages/ListOfJournalPage";
+import AboutJournalPage from "./Pages/AboutJournalPage";
+import EditorialBoardPage from "./Pages/EditorialBoardPage";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/" element={<ListOfJournalPage />} />
+          <Route path="/journal/about" element={<AboutJournalPage />} />
+          <Route path="/journals" element={<ListOfJournalPage />} />
+          <Route path="/" element={<EditorialBoardPage />} />
 
           {/* <Routes
             path="/admin/home"

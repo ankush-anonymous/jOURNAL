@@ -28,7 +28,8 @@ const JournalSidebarComponent = () => {
   return (
     <Box
       sx={{
-        width: "290px",
+        minWidth: "290px",
+        maxWidth: "290px",
         minHeight: "100%",
         marginLeft: { xs: "25px", md: "5px" },
         marginTop: "25px",

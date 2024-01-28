@@ -12,7 +12,7 @@ const JournalLayout = ({ children }) => {
       </Box>
       <Box sx={{ display: { sx: "flex-col", md: "flex" } }}>
         <JournalSidebarComponent />
-        <Box sx={{ width: "full", padding: "20px" }}>{children}</Box>
+        <Box sx={{ width: "full", padding: "30px" }}>{children}</Box>
       </Box>
     </Box>
   );
