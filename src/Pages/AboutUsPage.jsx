@@ -89,6 +89,7 @@ const AboutUsPage = () => {
             <Typography
               variant="h3"
               sx={{
+                // fontFamily: "Merriweather ",
                 fontFamily: "source sans pro",
                 [theme.breakpoints.down("sm")]: {
                   fontSize: "2.5rem", // Adjust the font size for small screens

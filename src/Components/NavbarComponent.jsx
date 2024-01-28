@@ -15,7 +15,7 @@ function NavbarComponent() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const tabs = [
     { label: "AboutUs", link: "/about" },
-    { label: "Journals", link: "/about" },
+    { label: "Journals", link: "/" },
     { label: "Membership", link: "/membership" },
     { label: "Contact", link: "/contact" },
   ];
@@ -124,6 +124,9 @@ function NavbarComponent() {
 
       {/* Drawer for xs screens */}
       <Drawer
+        PaperProps={{
+          sx: { width: "90%" },
+        }}
         anchor="left"
         open={isDrawerOpen}
         onClose={toggleDrawer(false)}
