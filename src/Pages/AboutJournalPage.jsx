@@ -1,8 +1,11 @@
 import React from "react";
 import JournalLayout from "../Components/JournalLayout";
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import { about } from "../data/About";
+import { journals } from "../data/AllJournals";
+import { subjects } from "../data/Subjects";
 
 const AboutJournalPage = () => {
   return (
@@ -22,6 +25,47 @@ const AboutJournalPage = () => {
           </Box>
           <Box>{about.aim}</Box>
         </Box>
+        <Divider />
+        <section className="my-20">
+          <Box>
+            <Box
+              sx={
+                {
+                  // border: "2px solid black",
+                  // height: "100vh",
+                  // padding: "15px",
+                }
+              }
+            >
+              {journals.map((journal, index) => (
+                <Box key={index} sx={{ marginBottom: "30px" }}>
+                  <Link
+                    to="/journal/about"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    {/* Wrapped the Typography component with Link */}
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: "blue",
+                        fontWeight: "bold",
+                        "&:hover": { cursor: "pointer" },
+                      }}
+                    >
+                      {journal.title}
+                    </Typography>
+                  </Link>
+                  <Box>
+                    <Typography variant="body2" sx={{ padding: "10px" }}>
+                      {journal.aim}
+                    </Typography>
+                  </Box>
+                  <Divider />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </section>
       </JournalLayout>
     </>
   );

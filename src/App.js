@@ -8,6 +8,7 @@ import AboutJournalPage from "./Pages/AboutJournalPage";
 import EditorialBoardPage from "./Pages/EditorialBoardPage";
 import IssuesPage from "./Pages/IssuesPage";
 import ArchivesPage from "./Pages/ArchivesPage";
+import MembershipPage from "./Pages/MembershipPage";
 
 function App() {
   return (
@@ -15,11 +16,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/membership" element={<MembershipPage />} />
           <Route path="/journal/about" element={<AboutJournalPage />} />
-          <Route path="/journals" element={<ListOfJournalPage />} />
+          <Route path="/" element={<ListOfJournalPage />} />
           <Route path="/journal/editorial" element={<EditorialBoardPage />} />
           <Route path="/journal/issues" element={<IssuesPage />} />
-          <Route path="/" element={<ArchivesPage />} />
+          <Route path="/journal/archives" element={<ArchivesPage />} />
 
           {/* <Routes
             path="/admin/home"

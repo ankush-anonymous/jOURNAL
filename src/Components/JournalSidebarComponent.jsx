@@ -1,15 +1,27 @@
 import { Box, Tab, Tabs, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const JournalSidebarComponent = () => {
   const [isAboutExtended, setIsAboutExtended] = useState(false);
   const [yourContributionValue, setYourContributionValue] = useState(null);
   const [mainTabsValue, setMainTabsValue] = useState(0);
 
+  const location = useLocation();
+
   const yourContributionTabs = [
     { label: "Submit your paper", link: "/journal/submitPaper" },
     { label: "Raise an Issue", link: "/journal/raiseIssue" },
   ];
+
+  useEffect(() => {
+    // Find the index of the tab whose link matches the current pathname
+    const tabIndex = mainTabs.findIndex(
+      (tab) => tab.link === location.pathname
+    );
+    setMainTabsValue(tabIndex !== -1 ? tabIndex : 0); // Set the value to the found index or 0 if not found
+  }, [location.pathname]);
 
   const mainTabs = [
     {
@@ -22,7 +34,7 @@ const JournalSidebarComponent = () => {
         { label: "Indexing", link: "/journal/indexing" },
       ],
     },
-    { label: "Editorial Board", link: "/journal/editorialBoard" },
+    { label: "Editorial Board", link: "/journal/editorial" },
     { label: "Indexing", link: "/journal/indexing" },
     { label: "Authors Guide", link: "/journal/authors" },
   ];
@@ -99,6 +111,9 @@ const JournalSidebarComponent = () => {
               <Tab
                 key={key}
                 label={item.label}
+                // Introducing the Link component for seamless navigation
+                component={Link}
+                to={item.link}
                 sx={{
                   backgroundColor:
                     mainTabsValue === key ? "#86B6F6" : "#233B59",

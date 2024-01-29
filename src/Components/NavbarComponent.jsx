@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -13,6 +14,15 @@ import XIcon from "@mui/icons-material/X";
 
 function NavbarComponent() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [value, setValue] = useState(0);
+  const location = useLocation(); // Get the current location from react-router-dom
+
+  useEffect(() => {
+    // Find the index of the tab whose link matches the current pathname
+    const tabIndex = tabs.findIndex((tab) => tab.link === location.pathname);
+    setValue(tabIndex !== -1 ? tabIndex : 0); // Set the value to the found index or 0 if not found
+  }, [location.pathname]); // Update the effect when the pathname changes
+
   const tabs = [
     { label: "AboutUs", link: "/about" },
     { label: "Journals", link: "/" },
@@ -21,12 +31,9 @@ function NavbarComponent() {
   ];
 
   const socialMediaLinks = [
-    // { icon: <FacebookIcon />, link: "https://www.facebook.com" },
     { icon: <XIcon />, link: "https://www.twitter.com" },
     { icon: <InstagramIcon />, link: "https://www.instagram.com" },
   ];
-
-  const [value, setValue] = React.useState(0);
 
   const toggleDrawer = (open) => (event) => {
     if (
