@@ -2,9 +2,7 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 const JournalSidebarComponent = () => {
-  const [isAboutExtended, setIsAboutExtended] = useState(false);
-  const [yourContributionValue, setYourContributionValue] = useState(null);
-  const [mainTabsValue, setMainTabsValue] = useState(0);
+  const [isAboutExtened, setIsAboutExtended] = useState(false);
 
   const yourContributionTabs = [
     { label: "Submit your paper", link: "/journal/submitPaper" },
@@ -12,28 +10,31 @@ const JournalSidebarComponent = () => {
   ];
 
   const mainTabs = [
-    {
-      label: "About Journal",
-      link: "/journal/about",
-      tabs: [
-        { label: "Intro & Scope", link: "/journal/about" },
-        { label: "Special Issue", link: "/journal/editorialBoard" },
-        { label: "Archives", link: "/journal/authors" },
-        { label: "Indexing", link: "/journal/indexing" },
-      ],
-    },
+    // { label: "About Journal", link: "/journal/about" },
     { label: "Editorial Board", link: "/journal/editorialBoard" },
     { label: "Indexing", link: "/journal/indexing" },
     { label: "Authors Guide", link: "/journal/authors" },
   ];
+  const aboutTabs = [
+    // { label: "Intro & Scope", link: "/journal/about" },
+    { label: "Issue", link: "/journal/editorialBoard" },
+    { label: "Archives", link: "/journal/authors" },
+    { label: "Indexing", link: "/journal/indexing" },
+  ];
+
+  const [yourContributionValue, setYourContributionValue] = useState(null);
+  const [mainTabsValue, setMainTabsValue] = useState(null);
+  const [aboutTabsValue, setAboutTabsValue] = useState(null);
 
   const handleYourContributionChange = (event, newValue) => {
     setYourContributionValue(newValue);
   };
 
   const handleMainTabsChange = (event, newValue) => {
-    setIsAboutExtended(false);
     setMainTabsValue(newValue);
+  };
+  const handleAboutTabsChange = (event, newValue) => {
+    setAboutTabsValue(newValue);
   };
 
   return (
@@ -91,6 +92,24 @@ const JournalSidebarComponent = () => {
         <Box sx={{ height: "100%" }}>
           <Tabs
             orientation="vertical"
+            value={aboutTabsValue}
+            onChange={handleAboutTabsChange}
+            sx={{ borderRight: 1, borderColor: "#176B87", padding: "5px" }}
+          >
+            <Tab
+              label={"About Journal"}
+              sx={{
+                backgroundColor: "#233B59",
+                marginRight: "0px",
+                paddingRight: "16px",
+                marginBottom: "5px",
+                color: "white",
+              }}
+            />
+          </Tabs>
+          <Tabs
+            orientation="vertical"
+            variant="scrollable"
             value={mainTabsValue}
             onChange={handleMainTabsChange}
             sx={{ borderRight: 1, borderColor: "#176B87", padding: "5px" }}
@@ -112,6 +131,36 @@ const JournalSidebarComponent = () => {
           </Tabs>
         </Box>
       </Box>
+
+      {/* Extender version of About Journal  */}
+      {isAboutExtened && (
+        <Box>
+          <Box sx={{ height: "100%" }}>
+            <Tabs
+              orientation="vertical"
+              variant="scrollable"
+              value={mainTabsValue}
+              onChange={handleMainTabsChange}
+              sx={{ borderRight: 1, borderColor: "#176B87", padding: "5px" }}
+            >
+              {mainTabs.map((item, key) => (
+                <Tab
+                  key={key}
+                  label={item.label}
+                  sx={{
+                    backgroundColor:
+                      mainTabsValue === key ? "#86B6F6" : "#233B59",
+                    marginRight: "0px",
+                    paddingRight: "16px",
+                    marginBottom: "5px",
+                    color: mainTabsValue === key ? "black" : "white",
+                  }}
+                />
+              ))}
+            </Tabs>
+          </Box>
+        </Box>
+      )}
     </>
   );
 };

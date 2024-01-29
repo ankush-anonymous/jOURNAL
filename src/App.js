@@ -6,6 +6,8 @@ import AboutUsPage from "./Pages/AboutUsPage";
 import ListOfJournalPage from "./Pages/ListOfJournalPage";
 import AboutJournalPage from "./Pages/AboutJournalPage";
 import EditorialBoardPage from "./Pages/EditorialBoardPage";
+import IssuesPage from "./Pages/IssuesPage";
+import ArchivesPage from "./Pages/ArchivesPage";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/journal/about" element={<AboutJournalPage />} />
           <Route path="/journals" element={<ListOfJournalPage />} />
-          <Route path="/" element={<EditorialBoardPage />} />
+          <Route path="/journal/editorial" element={<EditorialBoardPage />} />
+          <Route path="/journal/issues" element={<IssuesPage />} />
+          <Route path="/" element={<ArchivesPage />} />
 
           {/* <Routes
             path="/admin/home"

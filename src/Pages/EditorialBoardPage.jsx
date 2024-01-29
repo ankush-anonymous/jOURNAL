@@ -19,7 +19,10 @@ const EditorialBoardPage = () => {
           <Typography variant="h4">{about.title}</Typography>
         </Box>
         <Box sx={{ width: "100%", height: "60px" }}>
-          <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h5"
+            sx={{ fontWeight: "bold", marginTop: { xs: "100px", md: "20px" } }}
+          >
             Editorial Board
           </Typography>
         </Box>
