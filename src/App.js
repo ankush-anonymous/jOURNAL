@@ -9,6 +9,8 @@ import EditorialBoardPage from "./Pages/EditorialBoardPage";
 import IssuesPage from "./Pages/IssuesPage";
 import ArchivesPage from "./Pages/ArchivesPage";
 import MembershipPage from "./Pages/MembershipPage";
+import AuthorsGuidelinePage from "./Pages/AuthorsGuidelinePage";
+import AuthorsGuide2 from "./Pages/AuthorsGuide2";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/journal/editorial" element={<EditorialBoardPage />} />
           <Route path="/journal/issues" element={<IssuesPage />} />
           <Route path="/journal/archives" element={<ArchivesPage />} />
+          <Route path="/journal/authors" element={<AuthorsGuidelinePage />} />
+          <Route path="/journal/authors2" element={<AuthorsGuide2 />} />
 
           {/* <Routes
             path="/admin/home"

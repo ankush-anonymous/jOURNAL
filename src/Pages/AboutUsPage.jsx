@@ -132,16 +132,18 @@ const AboutUsPage = () => {
                 },
               }}
             >
-              Providing unparalleled services since 2003
+              About Us
             </Typography>
             <br />
           </Box>
           <Box
             sx={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "center", // Center along the x-axis
               alignItems: "center",
-              height: "10px",
+              height: "100%",
+              maxWidth: "75%",
+              margin: "auto",
             }}
           >
             <Typography
@@ -149,16 +151,32 @@ const AboutUsPage = () => {
               sx={{
                 fontFamily: "source sans ",
                 [theme.breakpoints.down("sm")]: {
-                  fontSize: "1rem", // Adjust the font size for small screens
+                  fontSize: "1rem",
                   marginTop: "100px",
                   padding: "15px",
                 },
+                textAlign: "justify",
               }}
             >
-              With two decades of experience, we have achieved some major
-              accomplishments.
+              Science EVE is dedicated community focused on promoting the
+              exchange of advanced scientific knowledge. It is not merely a
+              publisher. Science EVE allow researchers at all career levels to
+              interact, cooperate, and advance scientific discovery through our
+              many services. Science EVE have a diverse collection of top-tier,
+              peer-reviewed journals covering many fields, guaranteeing the
+              distribution of important research results to an international
+              readership. Science EVE continue beyond that. We create
+              interactive settings through hosting dynamic conferences,
+              workshops, and forums, where innovative ideas are introduced,
+              discussed, and developed. These meetings facilitate important
+              relationships, inspire partnerships, and advance scientific
+              advancement beyond traditional communication methods. Science Eve
+              invites both experienced researchers looking to discuss their work
+              and new scientists wanting to learn and interact. Join us in this
+              thrilling scientific expedition and exploration.
             </Typography>
           </Box>
+
           {/* Countdown  */}
           <Box
             sx={{

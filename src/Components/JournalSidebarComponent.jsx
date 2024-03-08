@@ -37,6 +37,7 @@ const JournalSidebarComponent = () => {
     { label: "Editorial Board", link: "/journal/editorial" },
     { label: "Indexing", link: "/journal/indexing" },
     { label: "Authors Guide", link: "/journal/authors" },
+    { label: "Authors Guide2", link: "/journal/authors2" },
   ];
 
   const handleYourContributionChange = (event, newValue) => {
