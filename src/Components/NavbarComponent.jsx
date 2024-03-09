@@ -76,9 +76,19 @@ function NavbarComponent() {
             }}
           >
             {/* Logo on the left */}
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Logo
-            </Typography>
+            <Box
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                height: "230px",
+                // border: "1px solid black",
+                display: "flex",
+                // flexDirection: "column",
+              }}
+            >
+              <img src="https://res.cloudinary.com/dsx8eh1hj/image/upload/v1709962586/white_font_paa3tb.png" />
+            </Box>
 
             {/* User Icon on the right */}
             <IconButton color="inherit">
@@ -142,17 +152,19 @@ function NavbarComponent() {
         }}
       >
         <Box
+          variant="h6"
+          component="div"
           sx={{
+            flexGrow: 1,
+            height: "230px",
+            width: "230px",
+            // border: "1px solid black",
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "auto", // Push the social media links to the bottom
-            backgroundColor: "#176B87",
-            height: "200px",
+            // alignItems: "center",
+            // flexDirection: "column",
           }}
         >
-          <Typography variant="h5">Logo</Typography>
+          <img src="https://res.cloudinary.com/dsx8eh1hj/image/upload/v1709963119/black_font_xqhdqf.png" />
         </Box>
         <Box
           sx={{
